@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CC4A6A29-14A3-4307-A661-9BF7F7131E81}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C4DB0C33-A382-4CD8-8E3D-58909C0A510C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HereDotNet.Core", "src\HereDotNet.Core\HereDotNet.Core.csproj", "{3D6316C6-FD65-4152-ACDF-3467B47913F0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HereDotNet.Extensions.Autofac", "src\HereDotNet.Extensions.Autofac\HereDotNet.Extensions.Autofac.csproj", "{78F11464-D3D1-41E3-8F71-7AFDE02D591C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HereDotNet.Extensions.DependencyInjection", "src\HereDotNet.Extensions.DependencyInjection\HereDotNet.Extensions.DependencyInjection.csproj", "{A2FCE897-918C-4787-B459-71147406DA05}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HereDotNet.NUnitTest", "test\HereDotNet.NUnitTest\HereDotNet.NUnitTest.csproj", "{F75850E0-B9BF-4C8A-A818-098EA1B19C49}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HereDotNet.IntegrationTest", "test\HereDotNet.IntegrationTest\HereDotNet.IntegrationTest.csproj", "{2DA552FA-5B01-4148-BFB8-D7E195806B22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D6316C6-FD65-4152-ACDF-3467B47913F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D6316C6-FD65-4152-ACDF-3467B47913F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D6316C6-FD65-4152-ACDF-3467B47913F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D6316C6-FD65-4152-ACDF-3467B47913F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78F11464-D3D1-41E3-8F71-7AFDE02D591C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78F11464-D3D1-41E3-8F71-7AFDE02D591C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78F11464-D3D1-41E3-8F71-7AFDE02D591C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78F11464-D3D1-41E3-8F71-7AFDE02D591C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2FCE897-918C-4787-B459-71147406DA05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2FCE897-918C-4787-B459-71147406DA05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2FCE897-918C-4787-B459-71147406DA05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2FCE897-918C-4787-B459-71147406DA05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F75850E0-B9BF-4C8A-A818-098EA1B19C49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F75850E0-B9BF-4C8A-A818-098EA1B19C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F75850E0-B9BF-4C8A-A818-098EA1B19C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F75850E0-B9BF-4C8A-A818-098EA1B19C49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DA552FA-5B01-4148-BFB8-D7E195806B22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DA552FA-5B01-4148-BFB8-D7E195806B22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DA552FA-5B01-4148-BFB8-D7E195806B22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DA552FA-5B01-4148-BFB8-D7E195806B22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3D6316C6-FD65-4152-ACDF-3467B47913F0} = {CC4A6A29-14A3-4307-A661-9BF7F7131E81}
+		{78F11464-D3D1-41E3-8F71-7AFDE02D591C} = {CC4A6A29-14A3-4307-A661-9BF7F7131E81}
+		{A2FCE897-918C-4787-B459-71147406DA05} = {CC4A6A29-14A3-4307-A661-9BF7F7131E81}
+		{F75850E0-B9BF-4C8A-A818-098EA1B19C49} = {C4DB0C33-A382-4CD8-8E3D-58909C0A510C}
+		{2DA552FA-5B01-4148-BFB8-D7E195806B22} = {C4DB0C33-A382-4CD8-8E3D-58909C0A510C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3ECAD112-2D18-465E-96EA-1217223320BF}
+	EndGlobalSection
+EndGlobal
