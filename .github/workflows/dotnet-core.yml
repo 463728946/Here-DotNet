@@ -10,30 +10,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Git Version
-      uses: codacy/git-version@2.4.0
+    - name: CheckOut
+      uses: actions/checkout@v2
       
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1           
-        
-    - name: Restore dependencies
-      run: dotnet restore     
+        dotnet-version: 3.1.x                   
+              
+     #- name: Restore dependencies
+     #  run: dotnet restore     
       
     - name: Build
-      run: dotnet build HereDotNet.sln      
+      run: dotnet build #HereDotNet.sln  
       
-    #- name: Test
-    #  run: dotnet test --no-build --verbosity normal
+      #- name: Test
+      #  run: dotnet test --no-build --verbosity normal
     
-    - name: Publish NuGet
-      uses: brandedoutcast/publish-nuget@v2.5.5
-      with:
-        PROJECT_FILE_PATH: HereDotNet.sln
-        NUGET_KEY: ${{secrets.NUGET_TOKEN}}
-        TAG_COMMIT: true
-        TAG_FORMAT: v*
-        
+    - name: Create the package
+      run: dotnet pack /p:PackageVersion=? --configuration Relesase
+      
+    - name: Publish the package to nuget.org
+      run: dotnet nuget push /bin/Relesase/*.nupkg -k $NUGET_AUTH_TOKEN -s https://api.nuget.org/v3/index.json
+      env:
+        NUGET_AUTH_TOKEN: ${{ secrets.NUGET_TOKEN }}
+
     
       
