@@ -19,21 +19,14 @@ jobs:
       - name: Git Version
         id: git-version
         uses: codacy/git-version@2.2.0
-
-      # Publish
+      
       - name: Publish NuGet        
         uses: brandedoutcast/publish-nuget@v2.5.5
         with:          
           PROJECT_FILE_PATH: HereDotNet.sln          
-          VERSION_STATIC: ${{ steps.git-version.outputs.Version }}
-         
-          # Flag to toggle git tagging, enabled by default
+          VERSION_STATIC: ${{ steps.git-version.outputs.Version }}                  
           TAG_COMMIT: true
-
-          # Format of the git tag, [*] gets replaced with actual version
           TAG_FORMAT: v*
-
-          # API key to authenticate with NuGet server
           NUGET_KEY: ${{secrets.GIT_TOKEN}}
 
          
