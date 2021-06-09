@@ -30,6 +30,8 @@ jobs:
       with:
         PROJECT_FILE_PATH: HereDotNet.sln
         NUGET_KEY: ${{secrets.NUGET_TOKEN}}
+        TAG_COMMIT: true
+        TAG_FORMAT: v*
         
     
       
