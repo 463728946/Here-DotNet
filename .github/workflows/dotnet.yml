@@ -24,6 +24,6 @@ jobs:
       run: dotnet restore HereDotNet/HereDotNet.sln
       
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build HereDotNet/HereDotNet.sln
       
     
