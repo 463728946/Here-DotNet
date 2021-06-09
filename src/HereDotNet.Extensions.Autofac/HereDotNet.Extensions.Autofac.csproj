@@ -2,15 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="6.2.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\HereDotNet.Core\HereDotNet.Core.csproj" />
+    <PackageReference Include="Autofac" Version="6.2.0" />
   </ItemGroup>
 
 </Project>

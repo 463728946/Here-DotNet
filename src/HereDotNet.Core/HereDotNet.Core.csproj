@@ -2,23 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Version>1.0.1</Version>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Configuration\HereAuthConfiguration.cs" />
-    <Compile Remove="Configuration\HereHttpConfiguration.cs" />
-    <Compile Remove="HereAuthConfiguration.cs" />
-    <Compile Remove="HereAuthConfigurationBuilder.cs" />
-    <Compile Remove="HereConfiguration.cs" />
-    <Compile Remove="HereConfigurationBuilder.cs" />
-    <Compile Remove="Services\ReuqestBuilder.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Caching\" />
-    <Folder Include="Model\" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />

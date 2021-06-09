@@ -2,21 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="HereDotNetConfigurationBuilder.cs" />
-    <Compile Remove="HereHttpConfigurationBuilder.cs" />
-    <Compile Remove="HereServiceConfigurationBuilder.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\HereDotNet.Core\HereDotNet.Core.csproj" />
+  <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
   </ItemGroup>
 
 </Project>
