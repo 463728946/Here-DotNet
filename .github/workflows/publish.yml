@@ -27,6 +27,6 @@ jobs:
           VERSION_STATIC: ${{ steps.git-version.outputs.Version }}                  
           TAG_COMMIT: true
           TAG_FORMAT: v*
-          NUGET_KEY: ${{secrets.GIT_TOKEN}}
+          NUGET_KEY: ${{secrets.NUGET_TOKEN}}
 
          
