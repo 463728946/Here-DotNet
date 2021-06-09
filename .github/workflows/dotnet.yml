@@ -26,4 +26,7 @@ jobs:
     - name: Build
       run: dotnet build HereDotNet/HereDotNet.sln
       
-    
+    - name: Publish NuGet (msbuild)
+      uses: MVS-Telecom/publish-nuget@test8
+      with:
+        NUGET_KEY: "oy2njv53v5vfftkmzkmacecdmnk2s2iulig7l3lrknuymm"      
