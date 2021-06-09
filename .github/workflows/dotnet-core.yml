@@ -28,7 +28,7 @@ jobs:
     - name: Publish NuGet
       uses: brandedoutcast/publish-nuget@v2.5.5
       with:
-        PROJECT_FILE_PATH: src/HereDotNet.Core/HereDotNet.Core.csproj;src/HereDotNet.Extensions.Autofac/HereDotNet.Extensions.Autofac.csproj;src/HereDotNet.Extensions.DependencyInjection/HereDotNet.Extensions.DependencyInjection.csproj
+        PROJECT_FILE_PATH: HereDotNet.sln
         NUGET_KEY: ${{secrets.NUGET_TOKEN}}
         
     
