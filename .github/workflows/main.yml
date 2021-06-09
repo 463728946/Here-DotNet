@@ -21,10 +21,10 @@ jobs:
         dotnet-version: 3.1.x
         
     - name: Restore 
-      run: dotnet restore HereDotNet/HereDotNet.sln
+      run: dotnet restore HereDotNet.sln
       
     - name: Build
-      run: dotnet build HereDotNet/HereDotNet.sln
+      run: dotnet build HereDotNet.sln
       
     - name: Publish NuGet
     # You may pin to the exact commit or the version.
