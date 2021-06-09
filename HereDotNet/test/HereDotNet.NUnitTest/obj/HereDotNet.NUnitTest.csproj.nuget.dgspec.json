@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\RAIN.l\\Desktop\\GitFile\\Here-DotNet\\HereDotNet\\test\\HereDotNet.NUnitTest\\HereDotNet.NUnitTest.csproj": {}
+    "C:\\Users\\RAIN.l\\Desktop\\ttt\\Here-DotNet\\HereDotNet\\test\\HereDotNet.NUnitTest\\HereDotNet.NUnitTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\RAIN.l\\Desktop\\GitFile\\Here-DotNet\\HereDotNet\\test\\HereDotNet.NUnitTest\\HereDotNet.NUnitTest.csproj": {
+    "C:\\Users\\RAIN.l\\Desktop\\ttt\\Here-DotNet\\HereDotNet\\test\\HereDotNet.NUnitTest\\HereDotNet.NUnitTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RAIN.l\\Desktop\\GitFile\\Here-DotNet\\HereDotNet\\test\\HereDotNet.NUnitTest\\HereDotNet.NUnitTest.csproj",
+        "projectUniqueName": "C:\\Users\\RAIN.l\\Desktop\\ttt\\Here-DotNet\\HereDotNet\\test\\HereDotNet.NUnitTest\\HereDotNet.NUnitTest.csproj",
         "projectName": "HereDotNet.NUnitTest",
-        "projectPath": "C:\\Users\\RAIN.l\\Desktop\\GitFile\\Here-DotNet\\HereDotNet\\test\\HereDotNet.NUnitTest\\HereDotNet.NUnitTest.csproj",
+        "projectPath": "C:\\Users\\RAIN.l\\Desktop\\ttt\\Here-DotNet\\HereDotNet\\test\\HereDotNet.NUnitTest\\HereDotNet.NUnitTest.csproj",
         "packagesPath": "C:\\Users\\RAIN.l\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RAIN.l\\Desktop\\GitFile\\Here-DotNet\\HereDotNet\\test\\HereDotNet.NUnitTest\\obj\\",
+        "outputPath": "C:\\Users\\RAIN.l\\Desktop\\ttt\\Here-DotNet\\HereDotNet\\test\\HereDotNet.NUnitTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
