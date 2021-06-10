@@ -1,18 +1,11 @@
 version: 1.0.{build}
 configuration: Release
 platform: Any CPU
-before_build:
-- cmd: >-
-    echo version:%APPVEYOR_BUILD_VERSION%
-
-    dotnet restore
 build:
   project: HereDotNet.sln
-  publish_nuget: true
-  publish_nuget_symbols: true
-  use_snupkg_format: true
-  include_nuget_references: true
   verbosity: normal
+after_test:
+- cmd: dotnet pack -p:PackageVersion=%APPVEYOR_BUILD_VERSION%
 artifacts:
 - path: '**/*.nupkg'
   name: Packages
