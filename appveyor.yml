@@ -1,6 +1,8 @@
 version: 1.0.{build}
 configuration: Release
 platform: Any CPU
+environment:
+  NUGET_API: oy2b6y7adalmi3uu2nvatmfwpoxnauluvgtgwwfci4oevu
 before_build:
 - cmd: dotnet restore
 build:
@@ -11,5 +13,10 @@ after_test:
 artifacts:
 - path: '**/*.nupkg'
   name: Packages
-deploy_script:
-- cmd: dotnet nuget push "**/*.nupkg" --api-key oy2b6y7adalmi3uu2nvatmfwpoxnauluvgtgwwfci4oevu --source https://api.nuget.org/v3/index.json
+deploy:
+- provider: NuGet
+  server: https://api.nuget.org/v3/index.json
+  api_key:
+    secure: kEtVKJEPR1XB8CrPAAtjM8s28waCl+sbi2mc5tiqig8q2s/1/HDXz/V4XXOU+ebk
+  skip_symbols: true
+  artifact: '**/*.nupkg'
