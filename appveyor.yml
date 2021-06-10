@@ -25,5 +25,4 @@ deploy:
   auth_token:
     secure: q9zB6yFSFTQg7nticjSUyiBFTf5Xwgm5Yxp/qhxtBP+hxmYzICpZJAWAu23x5Yz2
   artifact: CorePackages;ExtensionsPackages
-  prerelease: true
-  force_update: true
+
