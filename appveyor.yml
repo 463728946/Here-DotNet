@@ -1,8 +1,5 @@
 version: 1.0.{build}
-branches:
-  only:
-  - main
-skip_tags: true
+skip_non_tags: true
 configuration: Release
 platform: Any CPU
 before_build:
@@ -24,5 +21,7 @@ deploy:
   artifact: 'CorePackages;ExtensionsPackages'  
 
 - provider: GitHub
+  tag: $(APPVEYOR_REPO_TAG_NAME)
   auth_token:
     secure: q9zB6yFSFTQg7nticjSUyiBFTf5Xwgm5Yxp/qhxtBP+hxmYzICpZJAWAu23x5Yz2  
+ 
