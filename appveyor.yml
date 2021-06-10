@@ -8,6 +8,7 @@ build:
   verbosity: minimal
 deploy:
 - provider: NuGet
+  server: https://api.nuget.org/v3/index.json
   api_key:
     secure: TJ5kIPbgrmdM4FyaPw9g9qX0XgXCK3IaFqTAkc6Y4XnYdwzwNuhoJTdbx2XItYe/
   username:
