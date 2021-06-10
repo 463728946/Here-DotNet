@@ -17,7 +17,7 @@ artifacts:
   name: ExtensionsPackages
 deploy:
 - provider: NuGet
-  server: https://api.nuget.org/v3/index.json
+  #server: https://api.nuget.org/v3/index.json
   api_key:
     secure: kEtVKJEPR1XB8CrPAAtjM8s28waCl+sbi2mc5tiqig8q2s/1/HDXz/V4XXOU+ebk
   artifact: 'CorePackages'
