@@ -11,11 +11,15 @@ build:
 after_test:
 - cmd: dotnet pack -p:PackageVersion=%APPVEYOR_BUILD_VERSION%
 artifacts:
-- path: '**/*.nupkg'
-  name: Packages
+- path: '**/HereDotNet.Core.*.nupkg'
+  name: CorePackages
+- path: '**/HereDotNet.Extensions.*.nupkg'
+  name: ExtensionsPackages
 deploy:
 - provider: NuGet
   server: https://api.nuget.org/v3/index.json
   api_key:
     secure: kEtVKJEPR1XB8CrPAAtjM8s28waCl+sbi2mc5tiqig8q2s/1/HDXz/V4XXOU+ebk
+  username:
+    secure: VBWGGw6/L8AD9MPyQfmViw==
   skip_symbols: true
