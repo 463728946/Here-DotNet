@@ -2,7 +2,10 @@ version: 1.0.{build}
 configuration: Release
 platform: Any CPU
 before_build:
-- cmd: dotnet restore
+- cmd: >-
+    echo version:%APPVEYOR_BUILD_VERSION%
+
+    dotnet restore
 build:
   project: HereDotNet.sln
   publish_nuget: true
