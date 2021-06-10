@@ -2,13 +2,13 @@ version: 1.0.{build}
 before_build:
 - cmd: dotnet restore
 - cmd: dotnet build --configuration Release
-- cmd: dotnet pack --output nupkgs
+- cmd: dotnet pack 1.0.{build} --output nupkgs
 artifacts:
 - path: /nupkgs/*.nupkg
   name: Build
 deploy:
 - provider: NuGet  
   api_key:
-    secure: TJ5kIPbgrmdM4FyaPw9g9qX0XgXCK3IaFqTAkc6Y4XnYdwzwNuhoJTdbx2XItYe/
+    secure: oy2njv53v5vfftkmzkmacecdmnk2s2iulig7l3lrknuymm
   username:
     secure: iNDIMEuVdLPb5QtqiSTlcA==
