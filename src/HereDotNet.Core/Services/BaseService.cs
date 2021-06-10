@@ -35,7 +35,7 @@ namespace HereDotNet.Core.Services
         }
 
       
-        public async Task<IResponse<TResponse>> HandleAsync<TRequest, TResponse>(TRequest hereRequest) where TRequest : IRequest
+        internal async Task<IResponse<TResponse>> HandleAsync<TRequest, TResponse>(TRequest hereRequest) where TRequest : IRequest
         {
             _cfg.RestClient.BaseUrl = new Uri($"{_cfg.Shems}{hereRequest.Root}{_serviceName}{_cfg.Domain}{_version}");
 
