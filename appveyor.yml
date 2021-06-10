@@ -12,4 +12,4 @@ artifacts:
 - path: '**/*.nupkg'
   name: Packages
 deploy_script:
-- cmd: dotnet nuget push "*.nupkg" -k oy2p522u2jqdxzrxhwfa7w5wnttdddzuhlhauwfw2ush2y -s https://api.nuget.org/v3/index.json
+- cmd: dotnet nuget push "**/*.nupkg" -k oy2p522u2jqdxzrxhwfa7w5wnttdddzuhlhauwfw2ush2y -s https://api.nuget.org/v3/index.json
