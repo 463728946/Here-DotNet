@@ -24,4 +24,6 @@ deploy:
   artifact: CorePackages;ExtensionsPackages
   draft: false
   prerelease: false
+  on: 
+    APPVEYOR_REPO_TAG: true
 
