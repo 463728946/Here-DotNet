@@ -77,15 +77,22 @@ using HereDotNet.Core.Request;
 using HereDotNet.Core.Services;
 using Autofac;
 
-namespace MyConsoleApp
+namespace MyService
 {
-    class Program
+    public MyModule : Module
     {
-        private static async Task Main()
-        {
-           、、
-            
+        public MyModule()
+        {                      
             await route.FindsequenceAsync(request);
+        }
+        
+        protected override void Load(ContainerBuilder builder)
+        {
+            builder
+                .RegisterHereDotNet(cfg => cfg
+                    .UseApiKey("<Your ApiKey>")
+                    .AddRouteService()
+                    );
         }
     }
 }
