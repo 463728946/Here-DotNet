@@ -10,15 +10,17 @@ using System.Threading.Tasks;
 
 namespace HereDotNet.Core.Services
 {
-    public class BaseService
+    public abstract class BaseService
     {
-        private readonly IHereConfiguration _cfg;
-        private readonly IHereService _hereService;
+        private readonly HereConfiguration _cfg;       
+        private readonly string _serviceName;
+        private readonly string _version;
 
-        public BaseService(IHereConfiguration hereConfiguration, IHereService hereService)
+        public BaseService(HereConfiguration hereConfiguration, string name , string version)
         {
             _cfg = hereConfiguration;
-            _hereService = hereService;
+            _serviceName = name;
+            _version = version;
             switch (_cfg.AuthType)
             {
                 case AuthType.Jwt:
@@ -35,7 +37,7 @@ namespace HereDotNet.Core.Services
       
         public async Task<IResponse<TResponse>> HandleAsync<TRequest, TResponse>(TRequest hereRequest) where TRequest : IRequest
         {
-            _cfg.RestClient.BaseUrl = new Uri($"{_cfg.Shems}{hereRequest.Root}{_hereService.ServiceName}{_cfg.Domain}{_hereService.Version}");
+            _cfg.RestClient.BaseUrl = new Uri($"{_cfg.Shems}{hereRequest.Root}{_serviceName}{_cfg.Domain}{_version}");
 
             var request = GetRequest(hereRequest);
 

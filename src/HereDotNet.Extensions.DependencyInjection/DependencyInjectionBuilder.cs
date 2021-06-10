@@ -9,14 +9,13 @@ namespace HereDotNet.Extensions.DependencyInjection
 
     public class DependencyInjectionBuilder : IHereConfigurationBuilder
     {
-        public IHereConfiguration HereConfiguration { get; set; }
+        public HereConfiguration HereConfiguration { get; set; }
         private readonly IServiceCollection _service;
 
         public DependencyInjectionBuilder(IServiceCollection service)
         {
             _service = service;
-            HereConfiguration = new HereConfiguration();                        
-            _service.AddSingleton(c => HereConfiguration.RestClient);                     
+            HereConfiguration = new HereConfiguration();                              
         }
 
 
@@ -34,20 +33,19 @@ namespace HereDotNet.Extensions.DependencyInjection
         }
 
         public IHereConfigurationBuilder UseApiKey(string apikey)
-        {            
-            HereConfiguration.AuthType = AuthType.ApiKey;
-            HereConfiguration.AuthValue = apikey;
+        {
+            HereConfiguration.UseApiKey(apikey);
             return this;
         }
 
         public IHereConfigurationBuilder UseJwt(string token)
         {
-            HereConfiguration.AuthType = AuthType.Jwt;
-            HereConfiguration.AuthValue = token;
+            HereConfiguration.UseJwt(token);
             return this;
         }
         public IHereConfigurationBuilder UseUserPassword(string user, string password)
         {
+            HereConfiguration.UseUserPassword(user, password);
             return this;
         }
 

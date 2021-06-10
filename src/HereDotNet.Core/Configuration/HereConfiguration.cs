@@ -1,34 +1,46 @@
 ﻿using RestSharp;
-
+using System;
 
 namespace HereDotNet.Core.Configuration
 {
-
-    public interface IHereConfiguration
-    {       
-        string Shems { get; set; }
-        string Domain { get; set; } 
-        AuthType AuthType { get; set; }
-        string AuthValue { get; set; }
-        IRestClient RestClient { get; set; }
-       
-    }
-
-    public class HereConfiguration : IHereConfiguration
+    
+    public class HereConfiguration 
     {        
-        public IRestClient RestClient { get; set; }
-        public string Shems { get; set; } 
-        public string Domain { get; set; } 
+        internal IRestClient RestClient { get; set; }
+        public string Shems { get; set; } = "https://";
+        public string Domain { get; set; } = "hereapi.com";
 
-        public AuthType AuthType { get; set; }
+        internal AuthType AuthType { get; set; } = AuthType.ApiKey;
 
-        public string AuthValue { get; set; }
+        internal string AuthValue { get; set; }
 
-        public HereConfiguration(string shems = "https://", string domain = "hereapi.com")
-        {
-            Shems = shems;
-            Domain = domain;
+        public HereConfiguration()
+        {                             
             RestClient = new RestClient();
+        }
+
+        public HereConfiguration(string apiKey) : this()
+        {
+            UseApiKey(apiKey);
+        }
+
+
+
+        public void UseApiKey(string apikey)
+        {
+            AuthType = AuthType.ApiKey;
+            AuthValue = apikey;
+        }
+
+        public void UseJwt(string token)
+        {
+            AuthType = AuthType.Jwt;
+            AuthValue = token;
+        }
+
+        public void UseUserPassword(string user, string password)
+        {
+            throw new Exception("next version");
         }
 
     }

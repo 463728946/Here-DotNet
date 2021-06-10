@@ -7,16 +7,13 @@ namespace HereDotNet.Extensions.Autofac
 {
     public class AutofacBuilder : IHereConfigurationBuilder
     {
-        public IHereConfiguration HereConfiguration { get; set; }
+        public HereConfiguration HereConfiguration { get; set; }
 
         private readonly ContainerBuilder _builder;
         public AutofacBuilder(ContainerBuilder builder)
         {
-            _builder = builder;
-            HereConfiguration = new HereConfiguration();            
-            builder.Register(c => HereConfiguration).SingleInstance();
-            builder.Register(c => HereConfiguration.RestClient).SingleInstance();
-            
+            _builder = builder;           
+            HereConfiguration = new HereConfiguration();                   
         }
         public IHereConfigurationBuilder AddRouteService(string name = "ls.", string version = "/2")
         {
@@ -31,21 +28,20 @@ namespace HereDotNet.Extensions.Autofac
         }
 
         public IHereConfigurationBuilder UseApiKey(string apikey)
-        {
-            HereConfiguration.AuthType = AuthType.ApiKey;
-            HereConfiguration.AuthValue = apikey;
+        {            
+            HereConfiguration.UseApiKey(apikey);
             return this;
         }
 
         public IHereConfigurationBuilder UseJwt(string token)
         {
-            HereConfiguration.AuthType = AuthType.Jwt;
-            HereConfiguration.AuthValue = token;
+            HereConfiguration.UseJwt(token);
             return this;
         }
 
         public IHereConfigurationBuilder UseUserPassword(string user, string password)
-        {           
+        {            
+            HereConfiguration.UseUserPassword(user, password);
             return this;
         }
     }

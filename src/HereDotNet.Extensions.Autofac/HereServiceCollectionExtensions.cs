@@ -8,7 +8,7 @@ namespace HereDotNet.Extensions.Autofac
 {
     public static class HereServiceCollectionExtensions
     {
-        public static ContainerBuilder AddHereDotNet(this ContainerBuilder builder, Action<IHereConfigurationBuilder> configure)
+        public static ContainerBuilder RegisterHereDotNet(this ContainerBuilder builder, Action<IHereConfigurationBuilder> configure)
         {
             var autofac = new AutofacBuilder(builder);
             configure.Invoke(autofac);
