@@ -6,6 +6,9 @@ build:
   publish_nuget: true
   include_nuget_references: true
   verbosity: minimal
+artifacts:
+- path: '**/*.nupkg'
+  name: Packages  
 deploy:
 - provider: NuGet
   server: https://api.nuget.org/v3/index.json
