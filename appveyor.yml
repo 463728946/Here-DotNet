@@ -11,5 +11,11 @@ after_test:
 artifacts:
 - path: '**/*.nupkg'
   name: Packages
-deploy_script:
-- cmd: dotnet nuget push "**/*.nupkg" -k oy2p522u2jqdxzrxhwfa7w5wnttdddzuhlhauwfw2ush2y -s https://api.nuget.org/v3/index.json
+deploy:
+- provider: NuGet
+  server: https://api.nuget.org/v3/index.json
+  api_key:
+    secure: jpcTFAw4vyRxqS+A3CRFh9KbKvTTgsphFCCHmgrX0l3BTY3+is1zWUUDDNLFu7Dp
+  username:
+    secure: iNDIMEuVdLPb5QtqiSTlcA==
+  skip_symbols: true
