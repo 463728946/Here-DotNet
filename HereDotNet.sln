@@ -15,6 +15,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HereDotNet.Extensions.Depen
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HereDotNet.NUnitTest", "test\HereDotNet.NUnitTest\HereDotNet.NUnitTest.csproj", "{F75850E0-B9BF-4C8A-A818-098EA1B19C49}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution", "solution", "{6466C5AD-DDF8-4499-8A2A-2F6D39A64362}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		appveyor.yml = appveyor.yml
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
