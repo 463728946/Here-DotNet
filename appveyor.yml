@@ -2,7 +2,9 @@ version: 1.0.{build}
 before_build:
 - cmd: dotnet restore
 - cmd: dotnet build --configuration Release
-- cmd: dotnet pack 1.0.{build} --output nupkgs
+- cmd: dotnet pack /src/HereDotNet.Core/HereDotNet.Core.csproj -p:PackageVersion=1.0.{build} --output nupkgs
+- cmd: dotnet pack /src/HereDotNet.Extensions.Autofac/HereDotNet.Extensions.Autofac.csproj -p:PackageVersion=1.0.{build} --output nupkgs
+- cmd: dotnet pack /src/HereDotNet.Extensions.DependencyInjection/HereDotNet.Extensions.DependencyInjection.csproj -p:PackageVersion=1.0.{build} --output nupkgs
 artifacts:
 - path: /nupkgs/*.nupkg
   name: Build
