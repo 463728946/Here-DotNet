@@ -1,14 +1,19 @@
 version: 1.0.{build}
 configuration: Release
+platform: Any CPU
 before_build:
-- cmd: nuget restore
+- cmd: dotnet restore
 build:
+  project: HereDotNet.sln
   publish_nuget: true
-  include_nuget_references: true
   verbosity: minimal
 artifacts:
-- path: '**/*.nupkg'
-  name: Packages  
+- path: /src/HereDotNet.Core/bin/Release/netcoreapp3.1/HereDotNet.Core.dll
+  name: Build
+- path: /src/HereDotNet.Extensions.Autofac/bin/Release/netcoreapp3.1/HereDotNet.Extensions.Autofac.dll
+  name: Build
+- path: /src/HereDotNet.Extensions.DependencyInjection/bin/Release/netcoreapp3.1/HereDotNet.Extensions.DependencyInjection.dll
+  name: Build
 deploy:
 - provider: NuGet
   server: https://api.nuget.org/v3/index.json
