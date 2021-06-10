@@ -1,4 +1,7 @@
 version: 1.0.{build}
+branches:
+  only:
+  - main
 configuration: Release
 platform: Any CPU
 before_build:
@@ -17,12 +20,8 @@ deploy:
 - provider: NuGet
   api_key:
     secure: kEtVKJEPR1XB8CrPAAtjM8s28waCl+sbi2mc5tiqig8q2s/1/HDXz/V4XXOU+ebk
-  artifact: 'CorePackages;ExtensionsPackages'
-  on:
-    branch: main
+  artifact: 'CorePackages;ExtensionsPackages'  
 
 - provider: GitHub
   auth_token:
-    secure: q9zB6yFSFTQg7nticjSUyiBFTf5Xwgm5Yxp/qhxtBP+hxmYzICpZJAWAu23x5Yz2
-  on:
-    branch: main
+    secure: q9zB6yFSFTQg7nticjSUyiBFTf5Xwgm5Yxp/qhxtBP+hxmYzICpZJAWAu23x5Yz2  
