@@ -24,7 +24,7 @@ namespace HereDotNet.Extensions.Autofac
         public IHereConfigurationBuilder AddSearchService(string name = "search.", string version = "/v1")
         {
             _builder.Register<ISearchService>(c => new SearchService(HereConfiguration, name, version)).SingleInstance();
-            throw new System.NotImplementedException();
+            return this;
         }
 
         public IHereConfigurationBuilder UseApiKey(string apikey)
