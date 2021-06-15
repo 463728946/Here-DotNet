@@ -41,7 +41,10 @@ namespace HereDotNet.Core.Services
 
             var request = GetRequest(hereRequest);
 
-            var result = await _cfg.RestClient.ExecuteAsync<TResponse>(request);
+            var result = await _cfg.RestClient
+                .ExecuteAsync<TResponse>(request)
+                .ConfigureAwait(false);
+
             return new DefaultResponse<TResponse>
             {
                 Status = result.StatusDescription,
