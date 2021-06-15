@@ -22,13 +22,13 @@ namespace HereDotNet.Extensions.DependencyInjection
 
         public IHereConfigurationBuilder AddRouteService(string name = "ls.", string version = "/2")
         {
-            _service.AddSingleton<IRouteService>(c => new RouteService(HereConfiguration, name, version));
+            _service.AddScoped<IRouteService>(c => new RouteService(HereConfiguration, name, version));
             return this;
         }
 
         public IHereConfigurationBuilder AddSearchService(string name = "search.", string version = "/v1")
         {
-            _service.AddSingleton<ISearchService>(c => new SearchService(HereConfiguration, name, version));
+            _service.AddScoped<ISearchService>(c => new SearchService(HereConfiguration, name, version));
             return this;
         }
 

@@ -17,13 +17,13 @@ namespace HereDotNet.Extensions.Autofac
         }
         public IHereConfigurationBuilder AddRouteService(string name = "ls.", string version = "/2")
         {
-            _builder.Register<IRouteService>(c => new RouteService(HereConfiguration, name, version)).SingleInstance();
+            _builder.Register<IRouteService>(c => new RouteService(HereConfiguration, name, version)).InstancePerLifetimeScope();
             return this;
         }
 
         public IHereConfigurationBuilder AddSearchService(string name = "search.", string version = "/v1")
         {
-            _builder.Register<ISearchService>(c => new SearchService(HereConfiguration, name, version)).SingleInstance();
+            _builder.Register<ISearchService>(c => new SearchService(HereConfiguration, name, version)).InstancePerLifetimeScope();
             return this;
         }
 
