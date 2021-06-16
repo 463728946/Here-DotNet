@@ -76,24 +76,7 @@ namespace HereDotNet.Core.Request
         [Description("width")]
         public string Width { get; set; }
 
-       
-
-        public FindSequenceRequest()
-        {
-            //DateTime departure, List<Waypoint> destinations, Coordinates start, ModeType type = ModeType.fastest, Transport_mode tran = Transport_mode.car, bool traffic = false
-            //Mode = $"{type};{tran};traffic:{ (traffic ? "enabled" : "disabled")}";
-            //Start = start.ToString();
-            //Departure = departure.ToString("yyyy-MM-ddThh:mm:sszzzz");
-
-            //DestinationN = new string[destinations.Count];
-            //for (int i = 0; i < destinations.Count; i++)
-            //    DestinationN[i] = destinations[i].ToString();
-            //Departure = departure;
-            //DestinationN = destinations;
-            //Start = start;
-            //Mode = new Mode { Type = type, Transport_mode = tran, Traffic = traffic };                                   
-        }
-        
+               
     }
 
     public struct Mode
