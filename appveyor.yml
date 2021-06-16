@@ -13,6 +13,8 @@ before_build:
 build:
   project: HereDotNet.sln
   verbosity: minimal
+before_test:
+- cmd: 'echo {"apikey": "%ApiKey%"} > appsettings.json'
 after_test:
 - cmd: dotnet pack -p:PackageVersion=%APPVEYOR_BUILD_VERSION%
 artifacts:
