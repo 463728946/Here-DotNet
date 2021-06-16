@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace HereDotNet.Core.Model
@@ -12,13 +13,13 @@ namespace HereDotNet.Core.Model
         public readonly Coordinates Coordinates;
         public readonly int? St;
         public readonly DateTime? At;
-        public readonly DateTime? Acc;
+        public readonly List<DateTime> Acc;
         public readonly string Before;
         public readonly string Pickup;
         public readonly string Drop;
 
 
-        public Waypoint(double latitude, double longitude, int? st = null, DateTime? at = null, DateTime? acc = null, string before = "", string pickup = "", string dorp = "", string id = "")// : base(latitude, longitude)
+        public Waypoint(double latitude, double longitude, int? st = null, DateTime? at = null, List<DateTime> acc = null, string before = "", string pickup = "", string dorp = "", string id = "")// : base(latitude, longitude)
         {
             Id = id;
             Coordinates = new Coordinates(latitude, longitude);
@@ -38,7 +39,16 @@ namespace HereDotNet.Core.Model
             if (Coordinates != null) str.Append($"{Coordinates};");
             if (St.HasValue) str.Append($"st:{St};");
             if (At.HasValue) str.Append($"at:{ At.Value:yyyy-MM-ddThh:mm:sszzz};");
-            if (Acc.HasValue) str.Append($"acc:{Acc.Value.ToString("ddd").Remove(2, 1).ToLower()}{Acc.Value:hh:mm:sszzzz};");
+            //if (Acc.HasValue) str.Append($"acc:{Acc.Value.ToString("ddd").Remove(2, 1).ToLower()}{Acc.Value:hh:mm:sszzzz};");
+            if (Acc != null && Acc.Count > 0)
+            {
+                var acc = "";
+                foreach (var item in Acc)
+                {
+                    acc = string.IsNullOrEmpty(acc) ? $"{item.ToString("ddd").Remove(2, 1).ToLower()}{item:hh:mm:sszzzz}" : $"{acc}|{item.ToString("ddd").Remove(2, 1).ToLower()}{item:hh:mm:sszzzz}";
+                }
+                str.Append($"acc:{acc};");
+            }
             if (!string.IsNullOrEmpty(Before)) str.Append($"before:{Before};");
             if (!string.IsNullOrEmpty(Drop)) str.Append($"drop:{Drop};");
 

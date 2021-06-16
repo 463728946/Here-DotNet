@@ -1,8 +1,10 @@
 ﻿
 
+using System.Collections.Generic;
+
 namespace HereDotNet.Core.Request
 {
-    public interface IRequest
+    internal interface IRequest
     {
         string Method { get; }
         string Endpoint { get; }

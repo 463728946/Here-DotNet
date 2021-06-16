@@ -5,6 +5,9 @@ branches:
 skip_tags: true
 configuration: Release
 platform: Any CPU
+environment:
+  ApiKey:
+    secure: yt+E4lGvHFNff+z5+os436Tf1ihdWJ/ttcC+uvQIHr0ewkSi977AAImnw+8N1l/I
 before_build:
 - cmd: dotnet restore
 build:

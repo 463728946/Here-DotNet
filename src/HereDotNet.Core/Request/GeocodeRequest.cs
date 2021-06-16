@@ -1,4 +1,5 @@
 ﻿using HereDotNet.Core.Model;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace HereDotNet.Core.Request
@@ -54,6 +55,9 @@ namespace HereDotNet.Core.Request
 
         }
 
-
+        public Dictionary<string, object> ToParameter()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
+using HereDotNet.Core.Extensions;
 
 namespace HereDotNet.Core.Services
 {
@@ -39,7 +40,13 @@ namespace HereDotNet.Core.Services
         {
             _cfg.RestClient.BaseUrl = new Uri($"{_cfg.Shems}{hereRequest.Root}{_serviceName}{_cfg.Domain}{_version}");
 
-            var request = GetRequest(hereRequest);
+            //var request = GetRequest(hereRequest);
+            var request = new RestRequest(hereRequest.Method) { Resource = hereRequest.Endpoint };
+            foreach (var item in hereRequest.ToParameter())
+            {
+                request.AddParameter(item.Key, item.Value);
+            } 
+
 
             var result = await _cfg.RestClient
                 .ExecuteAsync<TResponse>(request)
@@ -55,7 +62,7 @@ namespace HereDotNet.Core.Services
             };
 
         }
-
+        /*
         private RestRequest GetRequest<TRequest>(TRequest hereRequest) where TRequest : IRequest
         {
             var method = Enum.Parse<Method>(hereRequest.Method);
@@ -111,7 +118,7 @@ namespace HereDotNet.Core.Services
 
             return request;
         }
-
+        */
     }
 
 

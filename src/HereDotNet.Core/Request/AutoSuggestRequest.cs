@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections.Generic;
 
 namespace HereDotNet.Core.Request
 {
@@ -10,5 +10,10 @@ namespace HereDotNet.Core.Request
         public string Endpoint => throw new NotImplementedException();
 
         public string Root => throw new NotImplementedException();
+
+        public Dictionary<string, object> ToParameter()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

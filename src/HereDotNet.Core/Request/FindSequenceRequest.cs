@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-
+using System.Text;
 
 namespace HereDotNet.Core.Request
 {
@@ -14,17 +14,17 @@ namespace HereDotNet.Core.Request
 
 
 
-        [Description("departure")]
-        public string Departure { get; }
+        [Description("departure|yyyy-MM-ddThh:mm:sszzzz")]
+        public DateTime Departure { get; set; }
 
         [Description("destination{0}")]
-        public string[] DestinationN { get; }
+        public List<Waypoint> DestinationN { get; set; }
 
         [Description("mode")]
-        public string Mode { get; }
+        public Mode Mode { get; set; }
 
         [Description("start")]
-        public string Start { get; }
+        public Coordinates Start { get; set; }
 
 
         //--------------------
@@ -36,7 +36,7 @@ namespace HereDotNet.Core.Request
         public string AvoidArea { get; set; }
 
         [Description("end")]
-        public string End { get; set; }
+        public Coordinates End { get; set; }
 
         [Description("hasTrailer")]
         public string HasTrailer { get; set; }
@@ -78,20 +78,34 @@ namespace HereDotNet.Core.Request
         public string Width { get; set; }
 
 
-        public FindSequenceRequest(DateTime departure, List<Waypoint> destinations, Coordinates start, ModeType type = ModeType.fastest, Transport_mode tran = Transport_mode.car, bool traffic = false)
+        public FindSequenceRequest()
         {
-            Mode = $"{type};{tran};traffic:{ (traffic ? "enabled" : "disabled")}";
-            Start = start.ToString();
-            Departure = departure.ToString("yyyy-MM-ddThh:mm:sszzzz");
+            //DateTime departure, List<Waypoint> destinations, Coordinates start, ModeType type = ModeType.fastest, Transport_mode tran = Transport_mode.car, bool traffic = false
+            //Mode = $"{type};{tran};traffic:{ (traffic ? "enabled" : "disabled")}";
+            //Start = start.ToString();
+            //Departure = departure.ToString("yyyy-MM-ddThh:mm:sszzzz");
 
-            DestinationN = new string[destinations.Count];
-            for (int i = 0; i < destinations.Count; i++)
-                DestinationN[i] = destinations[i].ToString();
-
-
+            //DestinationN = new string[destinations.Count];
+            //for (int i = 0; i < destinations.Count; i++)
+            //    DestinationN[i] = destinations[i].ToString();
+            //Departure = departure;
+            //DestinationN = destinations;
+            //Start = start;
+            //Mode = new Mode { Type = type, Transport_mode = tran, Traffic = traffic };                                   
         }
+        
+    }
 
+    public struct Mode
+    {
+        public ModeType Type { get; set; }
+        public Transport_mode Transport_mode { get; set; }
+        public bool Traffic { get; set; }
 
+        public override string ToString()
+        {
+            return $"{Type};{Transport_mode};traffic:{ (Traffic ? "enabled" : "disabled")}";
+        }
     }
 
 
