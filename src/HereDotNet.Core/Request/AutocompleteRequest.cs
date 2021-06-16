@@ -5,15 +5,11 @@ namespace HereDotNet.Core.Request
 {
     public class AutocompleteRequest : IRequest
     {
-        public string Method => throw new NotImplementedException();
+        internal string Method => throw new NotImplementedException();
 
-        public string Endpoint => throw new NotImplementedException();
+        internal string Endpoint => throw new NotImplementedException();
 
-        public string Root => throw new NotImplementedException();
+        internal string Root => throw new NotImplementedException();
 
-        public Dictionary<string, object> ToParameter()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -6,9 +6,9 @@ namespace HereDotNet.Core.Request
 {
     public class GeocodeRequest : IRequest
     {
-        public string Method => "GET";
-        public string Endpoint => "/geocode";
-        public string Root => "geocode.";
+        internal string Method => "GET";
+        internal string Endpoint => "/geocode";
+        internal string Root => "geocode.";
 
 
         [Description("at")]
@@ -54,10 +54,6 @@ namespace HereDotNet.Core.Request
             Show = show;
 
         }
-
-        public Dictionary<string, object> ToParameter()
-        {
-            throw new System.NotImplementedException();
-        }
+       
     }
 }

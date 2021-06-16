@@ -6,8 +6,8 @@ namespace HereDotNet.Core.Request
 {
     internal interface IRequest
     {
-        string Method { get; }
-        string Endpoint { get; }
-        string Root { get; }
+        internal string Method => "";
+        internal string Endpoint=> "";
+        internal string Root => "";
     }
 }

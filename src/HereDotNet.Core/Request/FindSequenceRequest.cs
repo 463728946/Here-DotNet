@@ -8,9 +8,9 @@ namespace HereDotNet.Core.Request
 {
     public class FindSequenceRequest : IRequest
     {
-        public string Method => "GET";
-        public string Endpoint => "/findsequence.json";
-        public string Root => "wse.";
+        internal string Method = "GET";
+        internal string Endpoint = "/findsequence.json";
+        internal string Root = "wse.";
 
 
 
@@ -76,7 +76,7 @@ namespace HereDotNet.Core.Request
 
         [Description("width")]
         public string Width { get; set; }
-
+       
 
         public FindSequenceRequest()
         {
