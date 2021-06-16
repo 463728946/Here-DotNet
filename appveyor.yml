@@ -14,7 +14,8 @@ build:
   project: HereDotNet.sln
   verbosity: minimal
 before_test:
-- cmd: 'echo {"apikey": "%ApiKey%"} > test/HereDotNet.UnitTests/appsettings.json'
+- cmd: 'echo {"apikey": "%ApiKey%"} > test\HereDotNet.UnitTests\appsettings.json'
+- cmd: 'type test\HereDotNet.UnitTests\appsettings.json'
 after_test:
 - cmd: dotnet pack -p:PackageVersion=%APPVEYOR_BUILD_VERSION%
 artifacts:
