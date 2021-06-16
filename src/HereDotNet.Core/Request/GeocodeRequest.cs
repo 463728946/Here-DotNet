@@ -5,11 +5,12 @@ using System.ComponentModel;
 namespace HereDotNet.Core.Request
 {
     public class GeocodeRequest : IRequest
-    {
-        internal string Method => "GET";
-        internal string Endpoint => "/geocode";
-        internal string Root => "geocode.";
+    {      
+        string IRequest.Method => "GET";
 
+        string IRequest.Endpoint => "/geocode";
+
+        string IRequest.Root => "geocode.";
 
         [Description("at")]
         public string At { get; }
@@ -35,7 +36,7 @@ namespace HereDotNet.Core.Request
         [Description("show")]
         public string[] Show { get; }
 
-
+       
 
         public GeocodeRequest(string q)
         {

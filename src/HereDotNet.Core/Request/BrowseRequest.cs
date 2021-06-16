@@ -5,12 +5,10 @@ namespace HereDotNet.Core.Request
 {
     public class BrowseRequest : IRequest
     {
-        internal string Method => throw new NotImplementedException();
+        string IRequest.Method => "";
 
-        internal string Endpoint => throw new NotImplementedException();
+        string IRequest.Endpoint => "";
 
-        internal string Root => throw new NotImplementedException();
-
-
+        string IRequest.Root => "";
     }
 }

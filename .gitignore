@@ -67,3 +67,4 @@ FodyWeavers.xsd
 
 # Created by developers using GNU/Linux
 .directory
+/test/HereDotNet.UnitTests/appsettings.json

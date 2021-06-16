@@ -1,13 +1,12 @@
 ﻿
-
-using System.Collections.Generic;
-
 namespace HereDotNet.Core.Request
 {
     internal interface IRequest
     {
-        internal string Method => "";
-        internal string Endpoint=> "";
-        internal string Root => "";
+        string Method { get; }
+        string Endpoint { get; }
+        string Root { get; }
     }
+
+    
 }

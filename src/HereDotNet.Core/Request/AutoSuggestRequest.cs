@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace HereDotNet.Core.Request
 {
-    public class AutoSuggestRequest : IRequest
+    public class AutoSuggestRequest //: IRequest
     {
         internal string Method => throw new NotImplementedException();
 

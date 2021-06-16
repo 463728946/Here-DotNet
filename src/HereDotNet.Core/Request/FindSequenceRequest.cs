@@ -7,11 +7,10 @@ using System.Text;
 namespace HereDotNet.Core.Request
 {
     public class FindSequenceRequest : IRequest
-    {
-        internal string Method = "GET";
-        internal string Endpoint = "/findsequence.json";
-        internal string Root = "wse.";
-
+    {       
+        string IRequest.Method => "GET";
+        string IRequest.Endpoint => "/findsequence.json";
+        string IRequest.Root => "wse.";
 
 
         [Description("departure|yyyy-MM-ddThh:mm:sszzzz")]
@@ -76,6 +75,7 @@ namespace HereDotNet.Core.Request
 
         [Description("width")]
         public string Width { get; set; }
+
        
 
         public FindSequenceRequest()
