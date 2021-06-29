@@ -27,7 +27,7 @@ namespace HereDotNet.UnitTests
             var cfg = new HereConfiguration();            
             cfg.UseApiKey("<Your ApiKey>");
 
-            var svr = new RouteService(cfg);
+            var svr = new WaypointsSequenceExtensionService(cfg);
 
             var waypoint1 = new Waypoint(33.99450952, -118.2264696, 1769, null, new List<DateTime> { new DateTime(2021, 06, 16, 07, 0, 0), new DateTime(2021, 06, 16, 14, 0, 0) });
             var waypoint2 = new Waypoint(33.99215051, -118.2256395, 647, null, new List<DateTime> { new DateTime(2021, 06, 16, 11, 0, 0), new DateTime(2021, 06, 16, 18, 0, 0) });
@@ -51,7 +51,7 @@ namespace HereDotNet.UnitTests
             var cfg = new HereConfiguration();
             cfg.UseApiKey(apikey);            
 
-            var svr = new RouteService(cfg);
+            var svr = new WaypointsSequenceExtensionService(cfg);
 
             var waypoint1 =  new Waypoint(33.99450952, -118.2264696, 1769, null, new List<DateTime> { new DateTime(2021, 06, 16, 07, 0, 0), new DateTime(2021, 06, 16, 14, 0, 0) });
             var waypoint2 = new Waypoint(33.99215051, -118.2256395, 647, null, new List<DateTime> { new DateTime(2021, 06, 16, 11, 0, 0), new DateTime(2021, 06, 16, 18, 0, 0) });
@@ -74,7 +74,7 @@ namespace HereDotNet.UnitTests
             var cfg = new HereConfiguration();
             cfg.UseApiKey(apikey);
 
-            var svr = new RouteService(cfg);
+            var svr = new WaypointsSequenceExtensionService(cfg);
 
             var waypoint1 = new Waypoint(33.99450952, -118.2264696, 1769, null, new List<DateTime> { new DateTime(2021, 06, 16, 07, 0, 0), new DateTime(2021, 06, 16, 14, 0, 0) });
             var waypoint2 = new Waypoint(33.99215051, -118.2256395, 647, null, new List<DateTime> { new DateTime(2021, 06, 16, 11, 0, 0), new DateTime(2021, 06, 16, 18, 0, 0) });

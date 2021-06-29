@@ -7,18 +7,16 @@ namespace HereDotNet.Core.Services
 {
     public interface IRouteService
     {
-        Task<IResponse<FindSequenceRequestResponse>> FindsequenceAsync(FindSequenceRequest request);
+        Task<IResponse<RouteCalculateRequestResponse>> RouteCalculateAsync(CalculateRouteRequest request);
     }
 
 
     public class RouteService : BaseService, IRouteService
     {
+        public RouteService(HereConfiguration hereConfiguration, string name = "router", string version = "/v8") : base(hereConfiguration, name, version) {}
 
-
-        public RouteService(HereConfiguration hereConfiguration, string name = "ls.", string version = "/2") : base(hereConfiguration, name, version) {}
-
-        public async Task<IResponse<FindSequenceRequestResponse>> FindsequenceAsync(FindSequenceRequest hereRequest)
-             => await HandleAsync<FindSequenceRequest, FindSequenceRequestResponse>(hereRequest);
+        public async Task<IResponse<RouteCalculateRequestResponse>> RouteCalculateAsync(CalculateRouteRequest hereRequest)
+             => await HandleAsync<CalculateRouteRequest, RouteCalculateRequestResponse>(hereRequest);
 
     }
 

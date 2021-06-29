@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 namespace HereDotNet.Core.Response
 {
-    public class DiscoverRequestReponse 
+    public class DiscoverRequestResponse 
     {
     }
 
-    public class DiscoverReponseItem
+    public class DiscoverResponseItem
     {
         public string Title { get; set; }
         public string Id { get; set; }

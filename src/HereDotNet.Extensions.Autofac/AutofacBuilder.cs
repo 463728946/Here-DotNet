@@ -15,9 +15,14 @@ namespace HereDotNet.Extensions.Autofac
             _builder = builder;           
             HereConfiguration = new HereConfiguration();                   
         }
-        public IHereConfigurationBuilder AddRouteService(string name = "ls.", string version = "/2")
+        public IHereConfigurationBuilder AddRouteService(string name = "router", string version = "/v8")
         {
             _builder.Register<IRouteService>(c => new RouteService(HereConfiguration, name, version)).InstancePerLifetimeScope();
+            return this;
+        }
+        public IHereConfigurationBuilder AddWaypointsSequenceExtensionService(string name = "ls.", string version = "/2")
+        {
+            _builder.Register<IWaypointsSequenceExtensionService>(c => new WaypointsSequenceExtensionService(HereConfiguration, name, version)).InstancePerLifetimeScope();
             return this;
         }
 

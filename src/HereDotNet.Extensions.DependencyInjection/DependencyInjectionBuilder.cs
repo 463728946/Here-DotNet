@@ -18,11 +18,15 @@ namespace HereDotNet.Extensions.DependencyInjection
             HereConfiguration = new HereConfiguration();                              
         }
 
-
-
-        public IHereConfigurationBuilder AddRouteService(string name = "ls.", string version = "/2")
+        public IHereConfigurationBuilder AddRouteService(string name = "router.", string version = "/v8")
         {
             _service.AddScoped<IRouteService>(c => new RouteService(HereConfiguration, name, version));
+            return this;
+        }
+
+        public IHereConfigurationBuilder AddWaypointsSequenceExtensionService(string name = "ls.", string version = "/2")
+        {
+            _service.AddScoped<IWaypointsSequenceExtensionService>(c => new WaypointsSequenceExtensionService(HereConfiguration, name, version));
             return this;
         }
 

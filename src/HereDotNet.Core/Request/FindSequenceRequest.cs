@@ -98,7 +98,7 @@ namespace HereDotNet.Core.Request
     }
     public enum Transport_mode
     {
-        car, truck, pedestrian
+        car, truck, pedestrian,bicycle,scooter,taxi,bus
     }
 
 }
