@@ -24,13 +24,13 @@ namespace HereDotNet.UnitTests
         [Test]
         public async Task Findsequence_NoApiKey_Unauthorized()
         {
-            var cfg = new HereConfiguration();            
+            var cfg = new HereConfiguration();
             cfg.UseApiKey("<Your ApiKey>");
 
             var svr = new WaypointsSequenceExtensionService(cfg);
 
-            var waypoint1 = new Waypoint(33.99450952, -118.2264696, 1769, null, new List<DateTime> { new DateTime(2021, 06, 16, 07, 0, 0), new DateTime(2021, 06, 16, 14, 0, 0) });
-            var waypoint2 = new Waypoint(33.99215051, -118.2256395, 647, null, new List<DateTime> { new DateTime(2021, 06, 16, 11, 0, 0), new DateTime(2021, 06, 16, 18, 0, 0) });
+            var waypoint1 = new Waypoint(33.99450952, -118.2264696, 1769, null, new List<AccessTime> { new AccessTime { Start = new DateTime(2021, 06, 16, 07, 0, 0), End = new DateTime(2021, 06, 16, 14, 0, 0) } });
+            var waypoint2 = new Waypoint(33.99215051, -118.2256395, 647, null, new List<AccessTime> { new AccessTime { Start = new DateTime(2021, 06, 16, 11, 0, 0), End = new DateTime(2021, 06, 16, 18, 0, 0) } });
 
             var result = await svr.FindsequenceAsync(new FindSequenceRequest()
             {
@@ -49,12 +49,12 @@ namespace HereDotNet.UnitTests
         {
             var apikey = GetKeyApi();
             var cfg = new HereConfiguration();
-            cfg.UseApiKey(apikey);            
+            cfg.UseApiKey(apikey);
 
             var svr = new WaypointsSequenceExtensionService(cfg);
 
-            var waypoint1 =  new Waypoint(33.99450952, -118.2264696, 1769, null, new List<DateTime> { new DateTime(2021, 06, 16, 07, 0, 0), new DateTime(2021, 06, 16, 14, 0, 0) });
-            var waypoint2 = new Waypoint(33.99215051, -118.2256395, 647, null, new List<DateTime> { new DateTime(2021, 06, 16, 11, 0, 0), new DateTime(2021, 06, 16, 18, 0, 0) });
+            var waypoint1 = new Waypoint(33.99450952, -118.2264696, 1769, null, new List<AccessTime> { new AccessTime { Start = new DateTime(2021, 06, 16, 07, 0, 0), End = new DateTime(2021, 06, 16, 14, 0, 0) } });
+            var waypoint2 = new Waypoint(33.99215051, -118.2256395, 647, null, new List<AccessTime> { new AccessTime { Start = new DateTime(2021, 06, 16, 11, 0, 0), End = new DateTime(2021, 06, 16, 18, 0, 0) } });
 
             var result = await svr.FindsequenceAsync(new FindSequenceRequest()
             {
@@ -76,15 +76,15 @@ namespace HereDotNet.UnitTests
 
             var svr = new WaypointsSequenceExtensionService(cfg);
 
-            var waypoint1 = new Waypoint(33.99450952, -118.2264696, 1769, null, new List<DateTime> { new DateTime(2021, 06, 16, 07, 0, 0), new DateTime(2021, 06, 16, 14, 0, 0) });
-            var waypoint2 = new Waypoint(33.99215051, -118.2256395, 647, null, new List<DateTime> { new DateTime(2021, 06, 16, 11, 0, 0), new DateTime(2021, 06, 16, 18, 0, 0) });
+            var waypoint1 = new Waypoint(33.99450952, -118.2264696, 1769, null, new List<AccessTime> { new AccessTime { Start = new DateTime(2021, 06, 16, 07, 0, 0), End = new DateTime(2021, 06, 16, 14, 0, 0) } });
+            var waypoint2 = new Waypoint(33.99215051, -118.2256395, 647, null, new List<AccessTime> { new AccessTime { Start = new DateTime(2021, 06, 16, 11, 0, 0), End = new DateTime(2021, 06, 16, 18, 0, 0) } });
 
             var result = await svr.FindsequenceAsync(new FindSequenceRequest()
             {
                 Departure = DateTime.UtcNow.AddDays(1),
                 DestinationN = new List<Waypoint> { waypoint1, waypoint2 },
                 Mode = new Mode { Type = ModeType.fastest, Transport_mode = Transport_mode.car, Traffic = false },
-                Start = new Coordinates(0,0)
+                Start = new Coordinates(0, 0)
             });
 
             result.Data.Errors.Any(x => x.Contains("No route")).ShouldBe(true);
