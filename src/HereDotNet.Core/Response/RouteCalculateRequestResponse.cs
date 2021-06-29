@@ -33,19 +33,16 @@ namespace HereDotNet.Core.Response
         public Coordinates OriginalLocation { get; set; }
     }
 
-    public class Place
+   
+
+    public class Arrival: Departure
     {
-
-    }
-
-    public class Arrival
-    {
-
+        public int Waypoint { get; set; }
     }
 
     public class Transport
     {
-
+        public string Mode { get; set; }
     }
 
 }

@@ -13,7 +13,7 @@ namespace HereDotNet.Core.Services
 
     public class RouteService : BaseService, IRouteService
     {
-        public RouteService(HereConfiguration hereConfiguration, string name = "router", string version = "/v8") : base(hereConfiguration, name, version) {}
+        public RouteService(HereConfiguration hereConfiguration, string name = "router.", string version = "/v8") : base(hereConfiguration, name, version) {}
 
         public async Task<IResponse<RouteCalculateRequestResponse>> RouteCalculateAsync(CalculateRouteRequest hereRequest)
              => await HandleAsync<CalculateRouteRequest, RouteCalculateRequestResponse>(hereRequest);
