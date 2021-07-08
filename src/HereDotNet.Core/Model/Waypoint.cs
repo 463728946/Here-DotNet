@@ -4,20 +4,16 @@ using System.Text;
 
 namespace HereDotNet.Core.Model
 {
-
-    
-
     public class Waypoint //: Coordinates
     {
-        public readonly string Id;
         public readonly Coordinates Coordinates;
-        public readonly int? St;
-        public readonly DateTime? At;
-        public readonly List<AccessTime> Acc;
-        public readonly string Before;
-        public readonly string Pickup;
-        public readonly string Drop;
-
+        public  int? St{ get; set; }
+        public  DateTime? At{ get; set; }
+        public  List<AccessTime> Acc{ get; set; }
+        public  string Before { get; set; }
+        public  string Pickup{ get; set; }
+        public  string Drop{ get; set; }
+        public  string Id{ get; set; }
 
         public Waypoint(double latitude, double longitude, int? st = null, DateTime? at = null, List<AccessTime> acc = null, string before = "", string pickup = "", string dorp = "", string id = "")// : base(latitude, longitude)
         {
@@ -49,22 +45,11 @@ namespace HereDotNet.Core.Model
                 str.Append($"acc:{acc};");
             }
             if (!string.IsNullOrEmpty(Before)) str.Append($"before:{Before};");
+            if (!string.IsNullOrEmpty(Pickup)) str.Append($"pickup:{Pickup}");
             if (!string.IsNullOrEmpty(Drop)) str.Append($"drop:{Drop};");
 
             return str.ToString();
         }
-
-        //public Waypoint(
-        //    GeoCoordinates coordinates,
-        //    WaypointType? waypointType,
-        //    int transitRadiusInMeters = 0,
-        //    int durationInSeconds = 0,
-        //    double? headingInDegrees = null,
-        //    GeoCoordinates sideOfStreetHint = null,
-        //    int? minCourseDistanceInMeters = null)
-        //{
-        //    Coordinates = coordinates;
-        //}
     }
 
     public enum WaypointType
