@@ -7,13 +7,13 @@ namespace HereDotNet.Core.Services
 {
     public interface IWaypointsSequenceExtensionService
     {
-        Task<IResponse<FindSequenceRequestResponse>> FindsequenceAsync(FindSequenceRequest request);
+        Task<IResponse<FindSequenceRequestResponse>> FindSequenceAsync(FindSequenceRequest request);
     }
     public class WaypointsSequenceExtensionService : BaseService, IWaypointsSequenceExtensionService
     {
         public WaypointsSequenceExtensionService(HereConfiguration hereConfiguration, string name = "ls.", string version = "/2") : base(hereConfiguration, name, version) { }
 
-        public async Task<IResponse<FindSequenceRequestResponse>> FindsequenceAsync(FindSequenceRequest hereRequest)
+        public async Task<IResponse<FindSequenceRequestResponse>> FindSequenceAsync(FindSequenceRequest hereRequest)
              => await HandleAsync<FindSequenceRequest, FindSequenceRequestResponse>(hereRequest);
 
     }

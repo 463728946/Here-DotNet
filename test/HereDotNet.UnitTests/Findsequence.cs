@@ -2,7 +2,6 @@ using HereDotNet.Core.Configuration;
 using HereDotNet.Core.Model;
 using HereDotNet.Core.Request;
 using HereDotNet.Core.Services;
-using NSubstitute;
 using NUnit.Framework;
 using Shouldly;
 using System;
@@ -22,7 +21,7 @@ namespace HereDotNet.UnitTests
         }
 
         [Test]
-        public async Task Findsequence_NoApiKey_Unauthorized()
+        public async Task FindSequence_NoApiKey_Unauthorized()
         {
             var cfg = new HereConfiguration();
             cfg.UseApiKey("<Your ApiKey>");
@@ -32,7 +31,7 @@ namespace HereDotNet.UnitTests
             var waypoint1 = new Waypoint(33.99450952, -118.2264696, 1769, null, new List<AccessTime> { new AccessTime { Start = new DateTime(2021, 06, 16, 07, 0, 0), End = new DateTime(2021, 06, 16, 14, 0, 0) } });
             var waypoint2 = new Waypoint(33.99215051, -118.2256395, 647, null, new List<AccessTime> { new AccessTime { Start = new DateTime(2021, 06, 16, 11, 0, 0), End = new DateTime(2021, 06, 16, 18, 0, 0) } });
 
-            var result = await svr.FindsequenceAsync(new FindSequenceRequest()
+            var result = await svr.FindSequenceAsync(new FindSequenceRequest()
             {
                 Departure = DateTime.UtcNow.AddDays(1),
                 DestinationN = new List<Waypoint> { waypoint1, waypoint2 },
@@ -45,7 +44,7 @@ namespace HereDotNet.UnitTests
 
 
         [Test]
-        public async Task Findsequence_NoRequiredParameter_ShouldBeTrue()
+        public async Task FindSequence_NoRequiredParameter_ShouldBeTrue()
         {
             var apikey = GetKeyApi();
             var cfg = new HereConfiguration();
@@ -56,7 +55,7 @@ namespace HereDotNet.UnitTests
             var waypoint1 = new Waypoint(33.99450952, -118.2264696, 1769, null, new List<AccessTime> { new AccessTime { Start = new DateTime(2021, 06, 16, 07, 0, 0), End = new DateTime(2021, 06, 16, 14, 0, 0) } });
             var waypoint2 = new Waypoint(33.99215051, -118.2256395, 647, null, new List<AccessTime> { new AccessTime { Start = new DateTime(2021, 06, 16, 11, 0, 0), End = new DateTime(2021, 06, 16, 18, 0, 0) } });
 
-            var result = await svr.FindsequenceAsync(new FindSequenceRequest()
+            var result = await svr.FindSequenceAsync(new FindSequenceRequest()
             {
                 Departure = DateTime.UtcNow.AddDays(1),
                 DestinationN = new List<Waypoint> { waypoint1, waypoint2 },
@@ -68,7 +67,7 @@ namespace HereDotNet.UnitTests
         }
 
         [Test]
-        public async Task Findsequence_OkParameter_NoRoute()
+        public async Task FindSequence_OkParameter_NoRoute()
         {
             var apikey = GetKeyApi();
             var cfg = new HereConfiguration();
@@ -79,7 +78,7 @@ namespace HereDotNet.UnitTests
             var waypoint1 = new Waypoint(33.99450952, -118.2264696, 1769, null, new List<AccessTime> { new AccessTime { Start = new DateTime(2021, 06, 16, 07, 0, 0), End = new DateTime(2021, 06, 16, 14, 0, 0) } });
             var waypoint2 = new Waypoint(33.99215051, -118.2256395, 647, null, new List<AccessTime> { new AccessTime { Start = new DateTime(2021, 06, 16, 11, 0, 0), End = new DateTime(2021, 06, 16, 18, 0, 0) } });
 
-            var result = await svr.FindsequenceAsync(new FindSequenceRequest()
+            var result = await svr.FindSequenceAsync(new FindSequenceRequest()
             {
                 Departure = DateTime.UtcNow.AddDays(1),
                 DestinationN = new List<Waypoint> { waypoint1, waypoint2 },

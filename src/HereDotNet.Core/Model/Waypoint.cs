@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace HereDotNet.Core.Model
 {
-    public class Waypoint //: Coordinates
+    public class Waypoint
     {
         public readonly Coordinates Coordinates;
         public  int? St{ get; set; }
@@ -34,16 +35,10 @@ namespace HereDotNet.Core.Model
             if (!string.IsNullOrEmpty(Id)) str.Append($"{Id};");
             if (Coordinates != null) str.Append($"{Coordinates};");
             if (St.HasValue) str.Append($"st:{St};");
-            if (At.HasValue) str.Append($"at:{ At.Value:yyyy-MM-ddTHH:mm:sszzz};");            
+            if (At.HasValue) str.Append($"at:{At.Value:yyyy-MM-ddTHH:mm:sszzz};");
             if (Acc != null && Acc.Count > 0)
-            {
-                var acc = "";
-                foreach (var tw in Acc)
-                {                                      
-                    acc = string.IsNullOrEmpty(acc) ? tw.ToString() : $"{acc},{tw}";
-                }
-                str.Append($"acc:{acc};");
-            }
+                str.Append(
+                    $"acc:{Acc.Aggregate("", (current, tw) => string.IsNullOrEmpty(current) ? tw.ToString() : $"{current},{tw}")};");
             if (!string.IsNullOrEmpty(Before)) str.Append($"before:{Before};");
             if (!string.IsNullOrEmpty(Pickup)) str.Append($"pickup:{Pickup}");
             if (!string.IsNullOrEmpty(Drop)) str.Append($"drop:{Drop};");
