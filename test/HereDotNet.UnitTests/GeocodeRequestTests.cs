@@ -1,14 +1,8 @@
 ﻿using HereDotNet.Core.Configuration;
-using HereDotNet.Core.Model;
 using HereDotNet.Core.Request;
 using HereDotNet.Core.Services;
-using NSubstitute;
 using NUnit.Framework;
 using Shouldly;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
 using System.Threading.Tasks;
 
 namespace HereDotNet.UnitTests
