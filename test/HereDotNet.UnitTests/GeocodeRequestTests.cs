@@ -1,4 +1,5 @@
-﻿using HereDotNet.Core.Configuration;
+﻿using System.Linq;
+using HereDotNet.Core.Configuration;
 using HereDotNet.Core.Request;
 using HereDotNet.Core.Services;
 using NUnit.Framework;
@@ -29,6 +30,7 @@ namespace HereDotNet.UnitTests
             });
 
             result.IsSuccessful.ShouldBeTrue();
+            result.Data.Items.Any(x => x.Scoring.QueryScore > 0).ShouldBeTrue();
             //result.Data.Items.Any(x => x.Contains("is required, but not found")).ShouldBeTrue();
         }
     }

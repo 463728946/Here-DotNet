@@ -26,20 +26,23 @@ namespace HereDotNet.Core.Response
 
         public Address Address { get; set; }
         public Coordinates Position { get; set; }
-        public List<Coordinates> Access { get; set; }
+        public IEnumerable<Coordinates> Access { get; set; }
         public long Distance { get; set; }
         public MapView MapView { get; set; }
-        public List<Category> Categories { get; set; }
+        public IEnumerable<Category> Categories { get; set; }
        
-        public IList<Category> FoodTypes { get; set; }
+        public IEnumerable<Category> FoodTypes { get; set; }
 
         public bool HouseNumberFallback { get; set; }
        
         public object TimeZone { get; set; }
 
+        public Scoring Scoring { get; set; }
+        
         public object Extended { get; set; }
 
         public object Phonemes { get; set; }
+        public  object Parsing { get; set; }
     }
 
 }

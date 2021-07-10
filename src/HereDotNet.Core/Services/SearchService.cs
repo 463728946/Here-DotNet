@@ -12,8 +12,8 @@ namespace HereDotNet.Core.Services
        /* Task<IResponse<DiscoverRequestReponse>> SearchAsync(DiscoverRequest hereRequest);
         Task<IResponse<AutoSuggestRequestResponse>> SearchAsync(AutoSuggestRequest hereRequest);
         Task<IResponse<AutocompleteRequestResponse>> SearchAsync(AutocompleteRequest hereRequest);
-        Task<IResponse<ReverseGeocodeRequestResponse>> SearchAsync(ReverseGeocodeRequest hereRequest);*/
-        Task<IResponse<BrowseRequestResponse>> SearchAsync(BrowseRequest hereRequest);
+        Task<IResponse<ReverseGeocodeRequestResponse>> SearchAsync(ReverseGeocodeRequest hereRequest);
+        Task<IResponse<BrowseRequestResponse>> SearchAsync(BrowseRequest hereRequest);*/
 
     }
     public class SearchService : BaseService, ISearchService
@@ -36,9 +36,9 @@ namespace HereDotNet.Core.Services
       
         public async Task<IResponse<ReverseGeocodeRequestResponse>> SearchAsync(ReverseGeocodeRequest hereRequest)
             => await HandleAsync<ReverseGeocodeRequest, ReverseGeocodeRequestResponse>(hereRequest);
-     */
+     
         public async Task<IResponse<BrowseRequestResponse>> SearchAsync(BrowseRequest hereRequest)        
              => await HandleAsync<BrowseRequest, BrowseRequestResponse>(hereRequest);
-     
+     */
     }
 }
