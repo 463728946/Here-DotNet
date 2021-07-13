@@ -33,18 +33,25 @@ namespace HereDotNet.Core.Response
         public double Length { get; set; }
         public double BaseDuration { get; set; }
     }
-    public class Departure
+
+    public class Place
     {
         public string Type { get; set; }
         public Coordinates Location { get; set; }
         public Coordinates OriginalLocation { get; set; }
+    }
+    
+    public class Departure
+    {
+        public  DateTime Time { get; set; }
+        public  Place Place { get; set; }
     }
 
    
 
     public class Arrival: Departure
     {
-        public int Waypoint { get; set; }
+        
     }
 
     public class Transport
