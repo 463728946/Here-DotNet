@@ -37,8 +37,9 @@ namespace HereDotNet.UnitTests
         [Test]
         public async Task RouteCalculate_ShouldBeTrue()
         {
+            var apikey = GetKeyApi();
             var cfg = new HereConfiguration();
-            cfg.UseApiKey("UXm9sZ9IOd_z3_7puoz2oc7TgxGryOH7LUEuKRxbTYU");
+            cfg.UseApiKey(apikey);
 
             var svr = new RouteService(cfg);
             var result = await svr.RouteCalculateAsync(new CalculateRouteRequest()
